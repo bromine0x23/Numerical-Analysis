@@ -1,0 +1,20 @@
+\subsection{P232-4}
+\renewcommand{\FX}{\sin x}
+\renewcommand{\LRANGE}{0}
+\renewcommand{\RRANGE}{\frac{\pi}{2}}
+求$f(x) = \sin{x}$在$\RANGE$上的一次最佳一致逼近多项式
+\begin{SOLVE}
+设$f(x)$的一次最佳一致逼近多项式为$P_1(x) = a_1 x + a_0$，$f(x)$在$\RANGE$上有3个交错点$\LRANGE, x_2, \RRANGE$，满足
+\begin{align*}
+f'(x_2) - P_1(x_2)        & = 0\\
+f(\LRANGE) - P_1(\LRANGE) & = f(\RRANGE) - P_1(\RRANGE)\\
+f(\LRANGE) - P_1(\LRANGE) & = f(x_2) - P_1(x_2)
+\end{align*}
+解得
+\begin{align*}
+a_0    & = \frac{1}{2} \sqrt{1-\frac{4}{\pi^2}} - \frac{1}{\pi} \arccos{\frac{2}{\pi}}\\
+a_1    & = \frac{2}{\pi}\\
+x_2    & = \arccos{\frac{2}{\pi}}\\
+P_1(x) & = \frac{2}{\pi} x + \frac{1}{2} \sqrt{1-\frac{4}{\pi^2}} - \frac{1}{\pi} \arccos{\frac{2}{\pi}}
+\end{align*}
+\end{SOLVE}
