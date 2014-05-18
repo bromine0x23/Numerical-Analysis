@@ -1,0 +1,14 @@
+\subsection{P233-6}
+\renewcommand{\FX}{2 x^4 + 3 x^3 - x^2 + 1}
+\renewcommand{\LRANGE}{-1}
+\renewcommand{\RRANGE}{1}
+求$f(x) = \FX$在$\RANGE$上的三次最佳一致逼近多项式
+\begin{SOLVE}
+设$f(x)$的三次最佳一致逼近多项式为$P_3(x)$，则
+\begin{align*}
+\frac{f(x) - P_3(x)}{2} & = \Tilde{T}_4(x) = x^4 - x^2 + \frac{1}{8}\\
+P_3(x)                  & = f(x) - 2 \Tilde{T}_4(x)\\
+                        & = (\FX) - 2 (x^4 - x^2 + \frac{1}{8})\\
+                        & = 3 x^3 + x^2 + \frac{3}{4}
+\end{align*}
+\end{SOLVE}
