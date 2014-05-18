@@ -1,19 +1,24 @@
 \subsection{P233-9}
 求函数$f(x)$在指定区间上关于$\Phi(x)=\operatorname{span}\{1,x\}$的最佳平方逼近多项式
 \begin{enumerate}
-\newcommand{\COEFFICIENT}[5]{
+\renewcommand{\COEFFICIENTS}[5]{
 \begin{align*}
-b_{0}    & = \INTRANGE{1 \cdot \FX}{x} = #1 & b_{1}    & = \INTRANGE{x \cdot \FX}{x} = #2\\
-g_{0, 0} & = \INTRANGE{1 \cdot 1}{x}   = #3 & g_{0, 1} & = \INTRANGE{1 \cdot x}{x}   = #4\\
-g_{1, 0} & = \INTRANGE{x \cdot 1}{x}   = #4 & g_{1, 1} & = \INTRANGE{x \cdot x}{x}   = #5
+b_{0}   = \FUNCDOT{1}{f} & = \INTRANGE{1 \cdot \FX}{x} = #1 &
+b_{1}   = \FUNCDOT{x}{f} & = \INTRANGE{x \cdot \FX}{x} = #2 \\
+g_{0,0} = \FUNCDOT{1}{1} & = \INTRANGE{1 \cdot 1}{x}   = #3 &
+g_{0,1} = \FUNCDOT{1}{x} & = \INTRANGE{1 \cdot x}{x}   = #4 \\
+g_{1,0} = \FUNCDOT{x}{1} & = \INTRANGE{x \cdot 1}{x}   = #4 &
+g_{1,1} = \FUNCDOT{x}{x} & = \INTRANGE{x \cdot x}{x}   = #5
 \end{align*}
 }
 
 \newcommand{\EQUATION}{
 \begin{displaymath}
 \begin{pmatrix}
-g_{0, 0} & g_{0, 1} \\
-g_{1, 0} & g_{0, 0}
+g_{0,0} &
+g_{0,1} \\
+g_{1,0} &
+g_{1,1}
 \end{pmatrix}
 \begin{pmatrix}
 a_{0} \\
@@ -29,17 +34,19 @@ b_{1}
 
 \newcommand{\SOLUTION}[2]{
 \begin{align*}
-a_{0}  & = #1\\
-a_{1}  & = #2\\
-P_1(x) & = (#2) x + (#1)
+a_{0}  & = #1 &
+a_{1}  & = #2
 \end{align*}
+\begin{displaymath}
+P_1(x) = (#2) x + (#1)
+\end{displaymath}
 }
 
 \newcommand{\PATTERN}[7]{
 \item $f(x) = \FX, x \in [\LRANGE, \RRANGE]$
 \begin{SOLVE}
 设$f(x)$的最佳平方逼近多项式为$P_1(x)$，取$\rho(x) \equiv 1$，有
-\COEFFICIENT{#1}{#2}{#3}{#4}{#5}
+\COEFFICIENTS{#1}{#2}{#3}{#4}{#5}
 由
 \EQUATION
 解得
@@ -50,7 +57,7 @@ P_1(x) & = (#2) x + (#1)
 \renewcommand{\FX}{\frac{1}{x}}
 \renewcommand{\LRANGE}{1}
 \renewcommand{\RRANGE}{3}
-\PATTERN{\ln 2}{2}{2}{4}{\frac{26}{3}}{\frac{13 \ln 2}{2} - 6}{3 - 3 \ln 2}
+\PATTERN{\ln 2}{2}{2}{4}{\frac{26}{3}}{\frac{13 \ln 3}{2} - 6}{3 - 3 \ln 3}
 
 \renewcommand{\FX}{e^x}
 \renewcommand{\LRANGE}{0}

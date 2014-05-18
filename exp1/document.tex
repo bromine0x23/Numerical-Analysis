@@ -18,12 +18,18 @@
 \newcommand{\LRANGE}{a}
 \newcommand{\RRANGE}{b}
 \newcommand{\RANGE}{[\LRANGE, \RRANGE]}
-\newcommand{\INTRANGE}[2]{\int_\LRANGE^\RRANGE #1 d#2}
+\newcommand{\INTEGRATE}[4]{\int_{#1}^{#2} {#3} d{#4}}
+\newcommand{\INTRANGE}[2]{\INTEGRATE{\LRANGE}{\RRANGE}{#1}{#2}}
+\newcommand{\FUNCDOT}[2]{(#1, #2)}
+\newcommand{\PART}[1]{a_{#1} x^{#1}}
+\newcommand{\COEFFICIENT}{}
+\newcommand{\COEFFICIENTS}{}
 
 \begin{document}
 
 \input{4}
 \input{6}
 \input{9}
+\input{11}
 
 \end{document}
