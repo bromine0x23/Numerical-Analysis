@@ -1,0 +1,42 @@
+\subsection{P233-11}
+\renewcommand{\FX}{\sin \frac{\pi}{2} x}
+\renewcommand{\LRANGE}{-1}
+\renewcommand{\RRANGE}{1}
+\newcommand{\PA}{P_0}
+\newcommand{\PB}{P_1}
+\newcommand{\PC}{P_2}
+\newcommand{\PD}{P_3}
+\renewcommand{\PART}[1]{\frac{(f, P_{#1})}{(P_{#1}, P_{#1})} P_{#1}}
+\renewcommand{\COEFFICIENTS}[8]{
+\begin{align*}
+\FUNCDOT{P_0}{P_0} & = \INTRANGE{\PA \cdot \PA}{x} = #1 &
+\FUNCDOT{P_1}{P_1} & = \INTRANGE{\PB \cdot \PB}{x} = #2 \\
+\FUNCDOT{P_2}{P_2} & = \INTRANGE{\PC \cdot \PC}{x} = #3 &
+\FUNCDOT{P_3}{P_3} & = \INTRANGE{\PD \cdot \PD}{x} = #4 \\
+\FUNCDOT{f}{P_0}   & = \INTRANGE{\FX \cdot \PA}{x} = #5 &
+\FUNCDOT{f}{P_1}   & = \INTRANGE{\FX \cdot \PB}{x} = #6 \\
+\FUNCDOT{f}{P_2}   & = \INTRANGE{\FX \cdot \PC}{x} = #7 &
+\FUNCDOT{f}{P_3}   & = \INTRANGE{\FX \cdot \PD}{x} = #8
+\end{align*}
+}
+
+$f(x) = \FX$在$\RANGE$上按Legendre多项式展开，求三次最佳平方逼近多项式
+\begin{SOLVE}
+\renewcommand{\PA}{1}
+\renewcommand{\PB}{x}
+\renewcommand{\PC}{\frac{3 x^2 - 1}{2}}
+\renewcommand{\PD}{\frac{5 x^3 - 3 x}{2}}
+令$\Phi(x)=\operatorname{span}\{P_0, P_1, P_2, P_3\}$，$\rho(x) \equiv 1$，其中
+\begin{align*}
+P_0 & = \PA &
+P_1 & = \PB \\
+P_2 & = \PC &
+P_3 & = \PD
+\end{align*}
+计算可得
+\COEFFICIENTS{2}{\frac{2}{3}}{\frac{2}{5}}{\frac{2}{7}}{0}{\frac{8}{\pi^2}}{0}{\frac{48(\pi^2 - 10)}{\pi^4}}
+于是$f(x)$的三次最佳平方逼近多项式为\begin{align*}
+P_3(x) & = \PART{0} + \PART{1} + \PART{2} + \PART{3} \\
+       & = (\frac{420}{\pi^2} - \frac{4200}{\pi^4}) x^3 - (\frac{240}{\pi^2} - \frac{2520}{\pi^4}) x
+\end{align*}
+\end{SOLVE}
