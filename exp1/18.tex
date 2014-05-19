@@ -1,0 +1,33 @@
+\subsection{P233-18}
+已知数据见表，试求一次、二次代数多项式对其拟合
+\begin{center}
+\begin{tabular}{c|c c c c c}
+$x_i$ & -1    & -0.5 & 0    & 0.5  & 1 \\
+$y_i$ & -0.22 & 0.88 & 2.00 & 3.13 & 4.28
+\end{tabular}
+\end{center}
+\begin{SOLVE}
+在Matlab命令窗口执行
+\begin{lstlisting}
+>> x=[-1 -0.5 0 0.5 1]; y=[-0.22 0.88 2.00 3.13 4.28];
+>> polyfit(x,y,1)
+
+ans =
+
+    2.2500    2.0140
+
+>> polyfit(x,y,2)
+
+ans =
+
+    0.0314    2.2500    1.9983
+\end{lstlisting}
+于是所求一次代数多项式拟合为
+\begin{displaymath}
+y = 2.2500 x + 2.0140
+\end{displaymath}
+所求二次代数多项式拟合为
+\begin{displaymath}
+y = 0.0314 x^2 + 2.2500 x + 1.9983
+\end{displaymath}
+\end{SOLVE}

@@ -3,10 +3,13 @@
 \usepackage{amsmath,amssymb,amsbsy}
 \usepackage[thmmarks,amsmath]{ntheorem}
 \usepackage[hmargin={2cm, 1cm},vmargin=2cm]{geometry}
+\usepackage{listings}
+\setmonofont{DejaVu Sans Mono}
+\lstset{language=Matlab}
+\lstset{basicstyle=\ttfamily\small}
+\lstset{keywordstyle=\bfseries}
+\lstset{commentstyle=\itshape}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{cases}
 
 \setcounter{secnumdepth}{0}
 \setcounter{tocdepth}{3}
@@ -27,10 +30,11 @@
 
 \begin{document}
 
-\input{4}
-\input{6}
-\input{9}
-\input{11}
-\input{13}
+\include{4}
+\include{6}
+\include{9}
+\include{11}
+\include{13}
+\include{18}
 
 \end{document}
