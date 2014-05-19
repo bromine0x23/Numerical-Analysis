@@ -1,6 +1,5 @@
 \subsection{P233-9}
 求函数$f(x)$在指定区间上关于$\Phi(x)=\operatorname{span}\{1,x\}$的最佳平方逼近多项式
-\begin{enumerate}
 \renewcommand{\COEFFICIENTS}[5]{
 \begin{align*}
 b_{0}   = \FUNCDOT{1}{f} & = \INTRANGE{1 \cdot \FX}{x} = #1 &
@@ -32,45 +31,45 @@ b_{1}
 \end{displaymath}
 }
 
-\newcommand{\SOLUTION}[2]{
+\newcommand{\SOLUTION}[4]{
 \begin{align*}
 a_{0}  & = #1 &
 a_{1}  & = #2
 \end{align*}
-\begin{displaymath}
-P_1(x) = (#2) x + (#1)
-\end{displaymath}
+\begin{align*}
+P_1(x) & = (#2) x + (#1) \\
+       & = #4 x #3
+\end{align*}
 }
 
-\newcommand{\PATTERN}[7]{
-\item $f(x) = \FX, x \in [\LRANGE, \RRANGE]$
+\newcommand{\PATTERN}[9]{
+$f(x) = \FX, x \in [\LRANGE, \RRANGE]$
 \begin{SOLVE}
 设$f(x)$的最佳平方逼近多项式为$P_1(x)$，取$\rho(x) \equiv 1$，有
 \COEFFICIENTS{#1}{#2}{#3}{#4}{#5}
 由
 \EQUATION
 解得
-\SOLUTION{#6}{#7}
+\SOLUTION{#6}{#7}{#8}{#9}
 \end{SOLVE}
 }
 
-\renewcommand{\FX}{\frac{1}{x}}
-\renewcommand{\LRANGE}{1}
-\renewcommand{\RRANGE}{3}
-\PATTERN{\ln 2}{2}{2}{4}{\frac{26}{3}}{\frac{13 \ln 3}{2} - 6}{3 - 3 \ln 3}
+%\renewcommand{\FX}{\frac{1}{x}}
+%\renewcommand{\LRANGE}{1}
+%\renewcommand{\RRANGE}{3}
+%(1) \PATTERN{\ln 2}{2}{2}{4}{\frac{26}{3}}{\frac{13 \ln 3}{2} - 6}{3 - 3 \ln 3}
 
-\renewcommand{\FX}{e^x}
-\renewcommand{\LRANGE}{0}
-\renewcommand{\RRANGE}{1}
-\PATTERN{e - 1}{1}{1}{\frac{1}{2}}{\frac{1}{3}}{4 e - 10}{18 - 6 e}
+%\renewcommand{\FX}{e^x}
+%\renewcommand{\LRANGE}{0}
+%\renewcommand{\RRANGE}{1}
+%(2) \PATTERN{e - 1}{1}{1}{\frac{1}{2}}{\frac{1}{3}}{4 e - 10}{18 - 6 e}
 
 \renewcommand{\FX}{\cos {\pi x}}
 \renewcommand{\LRANGE}{0}
 \renewcommand{\RRANGE}{1}
-\PATTERN{0}{-\frac{2}{\pi^2}}{1}{\frac{1}{2}}{\frac{1}{3}}{\frac{12}{\pi^2}}{-\frac{24}{\pi^2}}
+(3) \PATTERN{0}{-\frac{2}{\pi^2}}{1}{\frac{1}{2}}{\frac{1}{3}}{\frac{12}{\pi^2}}{-\frac{24}{\pi^2}}{+ 1.2159}{- 2.4317}
 
 \renewcommand{\FX}{\ln x}
 \renewcommand{\LRANGE}{1}
 \renewcommand{\RRANGE}{2}
-\PATTERN{\ln 4 - 1}{\ln 4 - \frac{3}{4}}{1}{\frac{3}{2}}{\frac{7}{3}}{10 \ln 4 - \frac{29}{2}}{9 - 6 \ln 4}
-\end{enumerate}
+(4) \PATTERN{\ln 4 - 1}{\ln 4 - \frac{3}{4}}{1}{\frac{3}{2}}{\frac{7}{3}}{10 \ln 4 - \frac{29}{2}}{9 - 6 \ln 4}{-0.6371}{0.6822}
