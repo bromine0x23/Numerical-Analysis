@@ -1,0 +1,29 @@
+\subsection{P234-20}
+已知数据见表，试求拟合公式$y=a + b x^2$
+\begin{center}
+\begin{tabular}{c|c c c c c}
+$x_i$ & 19   & 25   & 31   & 38   & 44 \\
+\hline
+$y_i$ & 19.0 & 32.3 & 49.0 & 73.3 & 97.8
+\end{tabular}
+\end{center}
+\begin{SOLVE}
+在Matlab命令窗口执行
+\begin{lstlisting}
+>> x = [19 25 31 38 44]; y = [19.0 32.3 49.0 73.3 97.8]; xx = x.*x
+
+xx =
+
+         361         625         961        1444        1936
+
+>> polyfit(xx,y,1)
+
+ans =
+
+    0.0500    0.9726
+\end{lstlisting}
+于是所求拟合公式为
+\begin{displaymath}
+y = 0.9726 + 0.0500 x^2
+\end{displaymath}
+\end{SOLVE}
