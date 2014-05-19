@@ -1,0 +1,29 @@
+\subsection{P233-19}
+已知数据见表，试求拟合公式$y=a e^{b x}$
+\begin{center}
+\begin{tabular}{c|c c c c c c c c}
+$x_i$ & 1    & 2    & 3    & 4    & 5    & 6    & 7    & 8 \\
+$y_i$ & 15.3 & 20.5 & 27.4 & 34.6 & 49.1 & 65.6 & 87.8 & 117.6
+\end{tabular}
+\end{center}
+\begin{SOLVE}
+在Matlab命令窗口执行
+\begin{lstlisting}
+>> x = [1 2 3 4 5 6 7 8]; y = [15.3 20.5 27.4 34.6 49.1 65.6 87.8 117.6]; ly = log(y);
+>> polyfit(x,ly,1)
+
+ans =
+
+    0.2919    2.4268
+
+>> exp(2.4268)
+
+ans =
+
+   11.3229
+\end{lstlisting}
+于是所求拟合公式为
+\begin{displaymath}
+y = 11.3226 e^{0.2919 x}
+\end{displaymath}
+\end{SOLVE}
