@@ -1,0 +1,19 @@
+\subsection{P233-13}
+\renewcommand{\FX}{\arctan x}
+\renewcommand{\LRANGE}{-1}
+\renewcommand{\RRANGE}{1}
+求$f(x) = \FX$在$\RANGE$上的三次Chebyshev插值多项式
+\begin{SOLVE}
+选取Chebyshev插值点
+\begin{align*}
+x_0 & = \cos\frac{ \pi}{8} =  0.9239 & f(x_0) & = \arctan\cos\frac{ \pi}{8} =  0.7459 \\
+x_1 & = \cos\frac{3\pi}{8} =  0.3827 & f(x_1) & = \arctan\cos\frac{3\pi}{8} =  0.3655 \\
+x_2 & = \cos\frac{5\pi}{8} = -0.3827 & f(x_2) & = \arctan\cos\frac{5\pi}{8} = -0.3655 \\
+x_3 & = \cos\frac{7\pi}{8} = -0.9239 & f(x_3) & = \arctan\cos\frac{7\pi}{8} = -0.7459
+\end{align*}
+做Lagrange插值
+\begin{align*}
+P_3(x) & = f(x_0) l_0(x) + f(x_1) l_1(x) + f(x_2) l_2(x) + f(x_3) l_3(x)\\
+       & = 0.4268 x^3 - 0.2433 x^2 + 0.4430 x + 0.2077
+\end{align*}
+\end{SOLVE}
