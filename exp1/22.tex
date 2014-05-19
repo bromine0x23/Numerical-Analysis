@@ -1,0 +1,29 @@
+\subsection{P234-22}
+已知数据见表，试求拟合公式$y=a + b \ln x$
+\begin{center}
+\begin{tabular}{c|c c c c}
+$x_i$ & 3 & 5 & 10 & 20 \\
+\hline
+$y_i$ & 3.5 & 4.8 & 4.2 & 4.5
+\end{tabular}
+\end{center}
+\begin{SOLVE}
+在Matlab命令窗口执行
+\begin{lstlisting}
+>> x = [3 5 10 20]; y = [3.5 4.8 4.2 4.5]; lx = log(x)
+
+lx =
+
+    1.0986    1.6094    2.3026    2.9957
+
+>> polyfit(lx,y,1)
+
+ans =
+
+    0.3394    3.5707
+\end{lstlisting}
+于是所求拟合公式为
+\begin{displaymath}
+y = 3.5707 + 0.3394 \ln x
+\end{displaymath}
+\end{SOLVE}
