@@ -7,7 +7,7 @@ b_{1}   = \FUNCDOT{x}{f} & = \INTRANGE{x \cdot \FX}{x} = #2 \\
 g_{0,0} = \FUNCDOT{1}{1} & = \INTRANGE{1 \cdot 1}{x}   = #3 &
 g_{0,1} = \FUNCDOT{1}{x} & = \INTRANGE{1 \cdot x}{x}   = #4 \\
 g_{1,0} = \FUNCDOT{x}{1} & = \INTRANGE{x \cdot 1}{x}   = #4 &
-g_{1,1} = \FUNCDOT{x}{x} & = \INTRANGE{x \cdot x}{x}   = #5
+g_{1,1} = \FUNCDOT{x}{x} & = \INTRANGE{x \cdot x}{x}   = #5 \\
 \end{align*}
 }
 
@@ -17,16 +17,16 @@ g_{1,1} = \FUNCDOT{x}{x} & = \INTRANGE{x \cdot x}{x}   = #5
 g_{0,0} &
 g_{0,1} \\
 g_{1,0} &
-g_{1,1}
+g_{1,1} \\
 \end{pmatrix}
 \begin{pmatrix}
 a_{0} \\
-a_{1}
+a_{1} \\
 \end{pmatrix}
 =
 \begin{pmatrix}
 b_{0} \\
-b_{1}
+b_{1} \\
 \end{pmatrix}
 \end{displaymath}
 }
@@ -34,12 +34,11 @@ b_{1}
 \newcommand{\SOLUTION}[4]{
 \begin{align*}
 a_{0}  & = #1 &
-a_{1}  & = #2
+a_{1}  & = #2 \\
 \end{align*}
-\begin{align*}
-P_1(x) & = (#2) x + (#1) \\
-       & = #4 x #3
-\end{align*}
+\begin{displaymath}
+P_1(x) = (#2) x + (#1) = #4 x #3 \\
+\end{displaymath}
 }
 
 \newcommand{\PATTERN}[9]{
