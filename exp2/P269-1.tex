@@ -1,0 +1,29 @@
+\subsection{P269-1(2)}
+\renewcommand{\FX}{\frac{(1-e^{-x})^{\frac{1}{2}}}{x}}
+\renewcommand{\LRANGE}{0}
+\renewcommand{\RRANGE}{1}
+\renewcommand{\N}{10}
+
+用梯形公式和Simpson公式计算积分
+\begin{displaymath}
+\INTRANGE{\FX}{x}, n = \N
+\end{displaymath}
+
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) ((1 - exp(-x)) .^ 0.5) ./ x; a = 0; b = 1; n = 10;
+>> I1 = m_trapz(f, a + 1E-5, b, n)
+
+I1 =
+
+   17.2026
+
+>> I2 = m_simpson(f, a + 1E-5, b, n / 2)
+
+I2 =
+
+   11.9955
+
+\end{lstlisting}
+\end{SOLVE}

@@ -1,0 +1,77 @@
+\subsection{P270-5}
+
+\renewcommand{\FX}{\frac{1}{x}}
+\renewcommand{\LRANGE}{0}
+\renewcommand{\RRANGE}{1}
+\renewcommand{\EPSILON}{{10}^{-5}}
+
+求积分
+\begin{displaymath}
+\INTRANGE{\FX}{x}
+\end{displaymath}
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+\renewcommand{\N}{16}
+使用复合梯形公式，$n = \N$
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) 1 ./ x; a = 0; b = 1; n = 16;
+>> I = m_trapz(f, a + 1E-5, b, n)
+
+I =
+
+   3.1283e+03
+
+\end{lstlisting}
+\end{SOLVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+\renewcommand{\N}{4}
+使用复合Simpson公式，$n = \N$
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) 2 / sqrt(pi) * exp(- x .^ 2); a = 0; b = 1; epsilon = 1E-5;
+>> I = m_simpson(f, a + 1E-5, b, n / 2)
+
+I =
+
+   8.3354e+03
+
+\end{lstlisting}
+\end{SOLVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+Romberg算法
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) 1 ./ x; a = 0; b = 1; epsilon = 1E-5;
+>> I = m_romberg(f, a + 1E-5, b, epsilon)
+
+I =
+
+   96.0977
+
+\end{lstlisting}
+\end{SOLVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+将区间4等分，在每个区间上用两点Gauss公式计算，然后累加得积分值
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) 1 ./ x; a = 0; b = 1; n = 4;
+>> I =  m_gauss2(f, a, b, n) 
+
+I =
+
+    4.3854
+
+\end{lstlisting}
+\end{SOLVE}
+
+\end{enumerate}

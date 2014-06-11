@@ -1,0 +1,32 @@
+\subsection{P271-12}
+构造两点Gauss公式
+\begin{displaymath}
+\INTEGRATE{-1}{1}{f(x)}{x} \approx A_0 f(x_0) + A_1 f(x_1)
+\end{displaymath}
+并由此计算
+\begin{displaymath}
+\INTEGRATE{0}{1}{\sqrt{1 + 2x}}{x}
+\end{displaymath}
+\begin{SOLVE}
+由
+\begin{displaymath}
+P(x) = \frac{1}{2}(3 x^2 - x)
+\end{displaymath}
+\begin{align*}
+x_0 & = -\sqrt{\frac{1}{3}} &
+x_2 & = \sqrt{\frac{1}{3}} \\
+A_0 & = \INTEGRATE{-1}{1}{L_0(x)}{x} = 1 &
+A_1 & = \INTEGRATE{-1}{1}{L_1(x)}{x} = 1 &
+\end{align*}
+得
+\begin{displaymath}
+\INTEGRATE{-1}{1}{f(x)}{x} \approx f(-\sqrt{\frac{1}{3}}) + f(\sqrt{\frac{1}{3}})
+\end{displaymath}
+令$t = 2x - 1$
+则
+\begin{align*}
+I & = \frac{1}{2} \INTEGRATE{-1}{1}{\sqrt{t + 2}}{t} \\
+  & = \frac{1}{2} \left( \sqrt{-\sqrt{\frac{1}{3}} + 2} + \sqrt{\sqrt{\frac{1}{3}} + 2} \right) \\
+  & = 1.3990
+\end{align*}
+\end{SOLVE}

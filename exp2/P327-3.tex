@@ -1,0 +1,56 @@
+\subsection{P327-3}
+用四阶Runge-Kutta法求解下列初值问题，$h=0.1$，精确到小数点后4位
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+\begin{equation*}
+\begin{cases}
+y' & = y^2 e^{-x} \\
+y(1) & = 1, x \in [1, 2]
+\end{cases}
+\end{equation*}
+
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> [x, y] = m_rungekutta4(@(x, y)y^2 * exp(-x), [1, 2], 1, 0.1)
+
+x =
+
+    1.0000    1.1000    1.2000    1.3000    1.4000    1.5000    1.6000    1.7000    1.8000    1.9000    2.0000
+
+
+y =
+
+    1.0000    1.0363    1.0714    1.1054    1.1380    1.1692    1.1990    1.2273    1.2540    1.2793    1.3030
+
+\end{lstlisting}
+\end{SOLVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+\begin{equation*}
+\begin{cases}
+y' & = x^2 + x^3 y \\
+y(1) & = 1, x \in [1, 2]
+\end{cases}
+\end{equation*}
+
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> [x, y] = m_rungekutta4(@(x, y)x^2 + x^3 * y, [1, 2], 1, 0.1)
+
+x =
+
+    1.0000    1.1000    1.2000    1.3000    1.4000    1.5000    1.6000    1.7000    1.8000    1.9000    2.0000
+
+
+y =
+
+    1.0000    1.2401    1.5873    2.1032    2.8979    4.1785    6.3577   10.3105   18.0306   34.4383   72.8124
+
+\end{lstlisting}
+\end{SOLVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{enumerate}

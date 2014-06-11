@@ -1,0 +1,51 @@
+\subsection{P269-4}
+
+\renewcommand{\EPSILON}{{10}^{-5}}
+
+用Romberg公式求积分，使误差不超过$\EPSILON$
+
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\FX}{e^{-x^{2}}}
+\renewcommand{\LRANGE}{0}
+\renewcommand{\RRANGE}{1}
+
+\item \begin{displaymath}
+\frac{2}{\sqrt{\pi}} \INTRANGE{\FX}{x}
+\end{displaymath}
+
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) 2 / sqrt(pi) * exp(- x .^ 2); a = 0; b = 1; epsilon = 1E-5;
+>> I = m_romberg(f, a, b, epsilon)
+
+I =
+
+    0.8427
+
+\end{lstlisting}
+\end{SOLVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\FX}{x \sqrt{1 + x ^ 2}}
+\renewcommand{\LRANGE}{0}
+\renewcommand{\RRANGE}{3}
+
+\item \begin{displaymath}
+\INTRANGE{\FX}{x}
+\end{displaymath}
+
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) 2 / sqrt(pi) * exp(- x .^ 2); a = 0; b = 1; epsilon = 1E-5;
+>> I = m_romberg(f, a, b, epsilon)
+
+I =
+
+   10.2076
+
+\end{lstlisting}
+\end{SOLVE}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{enumerate}

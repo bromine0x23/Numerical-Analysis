@@ -1,0 +1,32 @@
+\subsection{P271-11}
+构造Gauss型求积公式
+\begin{displaymath}
+\INTEGRATE{-1}{1}{f(x)}{x} \approx A_0 f(x_0) + A_1 f(x_1) + A_2 f(x_2)
+\end{displaymath}
+并由此计算
+\begin{displaymath}
+\INTEGRATE{0}{1}{\frac{\sqrt{x}}{(1+x)^2}}{x}
+\end{displaymath}
+\begin{SOLVE}
+由
+\begin{align*}
+&& P(x) & = \frac{1}{2}(5 x^3 - 3 x) && \\
+x_0 & = -\sqrt{\frac{3}{5}} &
+x_1 & = 0 &
+x_2 & = \sqrt{\frac{3}{5}} \\
+A_0 & = \INTEGRATE{-1}{1}{L_0(x)}{x} = \frac{5}{9} &
+A_1 & = \INTEGRATE{-1}{1}{L_1(x)}{x} = \frac{8}{9} &
+A_2 & = \INTEGRATE{-1}{1}{L_2(x)}{x} = \frac{5}{9}
+\end{align*}
+于是
+\begin{displaymath}
+\INTEGRATE{-1}{1}{f(x)}{x} \approx \frac{5}{9} f(-\sqrt{\frac{3}{5}}) + \frac{8}{9} f(0) + \frac{5}{9} f(\sqrt{\frac{3}{5}})
+\end{displaymath}
+令$t = 2x - 1$
+则
+\begin{align*}
+I & = \frac{1}{2} \INTEGRATE{-1}{1}{\frac{\sqrt{\frac{t+1}{2}}}{(1+\frac{t+1}{2})^2}}{t} \\
+  & = \frac{1}{2} \left( \frac{5}{9} \frac{\sqrt{\frac{-\sqrt{\frac{3}{5}}+1}{2}}}{(1+\frac{-\sqrt{\frac{3}{5}}+1}{2})^2} + \frac{8}{9} \frac{\sqrt{\frac{0+1}{2}}}{(1+\frac{0+1}{2})^2} + \frac{5}{9} \frac{\sqrt{\frac{\sqrt{\frac{3}{5}}+1}{2}}}{(1+\frac{\sqrt{\frac{3}{5}}+1}{2})^2} \right) \\
+  & = 0.2885
+\end{align*}
+\end{SOLVE}

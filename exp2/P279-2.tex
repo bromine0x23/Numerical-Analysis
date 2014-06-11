@@ -1,0 +1,18 @@
+\subsection{P279-2}
+利用下表，求$x = 0.6$处的导数
+\begin{center}
+\begin{tabular}{c|c c c c c}
+$x$ & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 \\
+\hline
+$f(x)$ & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818
+\end{tabular}
+\end{center}
+
+\begin{SOLVE}
+\begin{align*}
+h & = 0.1 \\
+f'(0.6) & = \frac{1}{12h}(f(0.4) - 8 f(0.5) + 8 f(0.7) - f(0.8)) \\
+        & = \frac{1}{12 \times 0.1}(1.5836494 - 8 \times 1.7974426 + 8 \times 2.3275054 - 2.6510818) \\
+        & = 2.644225
+\end{align*}
+\end{SOLVE}

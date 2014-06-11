@@ -1,0 +1,29 @@
+\subsection{P269-2(2)}
+\renewcommand{\FX}{\frac{x}{\ln{1 + x}}}
+\renewcommand{\LRANGE}{1}
+\renewcommand{\RRANGE}{2}
+\renewcommand{\N}{6}
+
+用梯形公式和Simpson公式计算积分
+\begin{displaymath}
+\INTRANGE{\FX}{x}, n = \N
+\end{displaymath}
+
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> f = @(x) x ./ (log(1 + x)); a = 1; b = 2; n = 6;
+>> I1 = m_trapz(f, a, b, n)
+
+I1 =
+
+    1.6351
+
+>> I2 = m_simpson(f, a, b, n / 2)
+
+I2 =
+
+    1.6352
+
+\end{lstlisting}
+\end{SOLVE}

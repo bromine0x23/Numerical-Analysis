@@ -1,0 +1,19 @@
+\subsection{P270-7}
+推导下列三种矩形公式
+\begin{align*}
+\INTEGRATE{a}{b}{f(x)}{x} & = (b - a)f(a) + \frac{f'(\eta)}{2}(b-a)^2 \\
+\INTEGRATE{a}{b}{f(x)}{x} & = (b - a)f(b) - \frac{f'(\eta)}{2}(b-a)^2 \\
+\INTEGRATE{a}{b}{f(x)}{x} & = (b - a)f(\frac{a + b}{2}) + \frac{f''(\eta)}{24}(b-a)^3
+\end{align*}
+\begin{SOLVE}
+设$f(x)$原函数为$F(x)$，由Taylor公式得
+\begin{align}
+F(b) & = F(a) + (b-a) f(x) + \frac{(b-a)^2}{2} f'(\eta) \label{eq01}\\
+F(a) & = F(b) - (b-a) f(x) + \frac{(b-a)^2}{2} f'(\eta) \label{eq02}\\
+F(b) & = F(a) + (b-a) f(x) + \frac{(b-a)^2}{2} f'(x) + \frac{(b-a)^3}{6}f''(\eta) \label{eq03}\\
+F(a) & = F(b) - (b-a) f(x) + \frac{(b-a)^2}{2} f'(x) - \frac{(b-a)^3}{6}f''(\eta) \label{eq04}
+\end{align}
+
+由\eqref{eq01}、\eqref{eq02}变形可得左矩形公式及右矩形公式。由\eqref{eq03}及\eqref{eq04}联立消去$f'(x)$可得中矩形公式
+
+\end{SOLVE}

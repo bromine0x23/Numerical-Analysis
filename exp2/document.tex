@@ -1,0 +1,50 @@
+\documentclass[fancyhdr,hyperref,UTF8]{ctexrep}
+\usepackage[pdfstartview=FitH]{hyperref}
+\usepackage{amsmath,amssymb,amsbsy}
+\usepackage[thmmarks,amsmath]{ntheorem}
+\usepackage[hmargin={1cm, 1cm},vmargin=2cm]{geometry}
+\usepackage{listings}
+\usepackage{dejavu}
+\setmonofont{DejaVu Sans Mono}
+\lstset{language=Matlab}
+\lstset{basicstyle=\ttfamily\small}
+\lstset{keywordstyle=\bfseries}
+\lstset{commentstyle=}
+%\lstset{commentstyle=\itshape}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{3}
+
+\theoremstyle{nonumberplain}
+\newtheorem{SOLVE}{解}
+
+\newcommand{\FX}{f(x)}
+\newcommand{\LRANGE}{a}
+\newcommand{\RRANGE}{b}
+\newcommand{\N}{n}
+\newcommand{\EPSILON}{\epsilon}
+\newcommand{\INTEGRATE}[4]{\int_{#1}^{#2} {#3} d{#4}}
+\newcommand{\INTRANGE}[2]{\INTEGRATE{\LRANGE}{\RRANGE}{#1}{#2}}
+\newcommand{\AUTHOR}{13120026 王佳成}
+
+\pagestyle{fancy}
+\fancyhead[R]{\AUTHOR}
+\hypersetup{pdfauthor=\AUTHOR}
+
+\begin{document}
+
+\include{P269-1}
+\include{P269-2}
+\include{P269-4}
+\include{P270-5}
+\include{P270-6}
+\include{P270-7}
+\include{P271-11}
+\include{P271-12}
+\include{P279-1}
+\include{P279-2}
+\include{P327-1}
+\include{P327-2}
+\include{P327-3}
+\include{P327-6}
+
+\end{document}

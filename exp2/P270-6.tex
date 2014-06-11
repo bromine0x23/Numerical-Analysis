@@ -1,0 +1,22 @@
+\subsection{P270-6(4)}
+
+\renewcommand{\FX}{\frac{x^2}{sqrt(1-x^2)}}
+\renewcommand{\LRANGE}{-1}
+\renewcommand{\RRANGE}{1}
+
+用3点Gauss公示求
+\begin{displaymath}
+\INTRANGE{\FX}{x}
+\end{displaymath}
+
+\begin{SOLVE}
+在MATLAB命令窗口执行
+\begin{lstlisting}
+>> I = m_gauss3(@(x) x .^ 2 ./ sqrt(1 - x .^ 2), -1, 1, 1)
+
+I =
+
+    1.0541
+
+\end{lstlisting}
+\end{SOLVE}
